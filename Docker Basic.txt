@@ -1,0 +1,226 @@
+in vs code or any other IDE
+
+{
+
+	Craete a docker file  // Dockerfile (without any extensions)
+
+	//Making a dockerImage
+
+	FROM node:<Version> alpine  //alpine is the OS and you can skip the 	version.
+
+	COPY . /app  //Copying all the file to the app folder for craeting the 	image.
+
+		{
+			CMD node /app/(project file)eg- app.js
+
+			or
+
+			WORKDIR /app
+
+			CMD node app.js
+		}
+
+}
+
+now in terminal // int the original file of project not the image we have created eg - /app
+{
+
+docker build -t hello-docker .   //-t for tag and . to tell docker that the docker file is in the same folder hello-docker is just name which you can change and give any thing.
+
+docker image dir // To see the images which docker has created
+
+docker run -p8080:80 -d amarnath79/platformservices // more detail run
+
+docker pull <image name> // not downlode only run
+
+docker ps // to see runnung container
+
+docker ps -a // to see all previous runnung containers
+
+docker run hello-docker  //To run the docker file and it can be run from any folder.
+
+docker stop <container id > // to stop the runnung container
+
+docker start <container id> // to rerun the same container
+
+docker push <name> // to push in docker hub 
+
+docker rm <name or container id> // to remove the docker image for good
+
+docker images // to see all the images in the system
+
+docker rmi <name > // to remove that container image for good 
+
+docker run <container name > sleep 5 // will go to sleep for 5 second
+
+docker exec <name or id of container> <command line > // to execute the command line 
+
+docker run -d <name > // to run docker in detached mode (background mode)
+
+docker attach <name or id> // to view console of that docker terminal
+
+docker run -it <name> bash // to keep it running without any process and interactive mode
+
+docker run -d --name <name you want to give> <image name > //to give a name to a container
+
+docker run -i <container name > // to run in interactive mode
+
+docker history <container name or id> // to see full history of that container
+
+docker inspect  <container name or id> // to see full details of that container
+
+docker container pause <container name or id> // to pause the container
+
+docker container unpause <container name or id> // to unpause the container
+
+--restart=always // to restart the container at startup of docker desktop
+
+docker container prune // to remove all stoped container 
+
+-m value // to assign limited memory to a container
+
+--cpu-quota  value // to assign a cpu to a container
+
+docker system df // to see all the containers details that docker demon manages
+
+docker events // to see waht is happining with dockers all events ate loggent in terminal
+
+docker top  <container name or id > // to see processes running in the docker container
+
+docker stats // to all the stats related to the running containers
+
+docker logs <container name or id > // to see the logs of that conatiner
+
+docker run ubuntu cat /etc/*release* // to see the version of os running
+
+docker run -p 8080:8080 <name of docker image> // to access it locali 
+
+docker build . -t (any thing) // to create a docker image from Dockerfile
+
+again docker build . -t (my account name/ docker image name) // to tag it to your account for uplode
+
+docker login // to login to the docker
+
+docker push (my account name/ docker image name) // to push it to the docker repo
+
+eg docker run -d --name=clickcounter --link redis:redis -p 8085:5000 kodekloud/click-counter
+
+docker-compose up // to stack up multipal container togeathen to run as one and you need to craete a docker-compose.yml file
+
+}
+
+run in apy laptop
+
+{
+
+go to play with docker in brouser
+
+log in 
+
+docker pull (your location ok docker file in docker website)
+
+
+docker run (your location ok docker file in docker website)
+}
+
+learning linix
+
+{
+
+go to hub.docker.com
+
+docker run ubuntu in cmd or terminal
+
+docker ps -a // to see the running processes or containers
+
+docker run -it  ubuntu   // -it for interactive
+{
+
+echo hello  // to print hello
+whoami // to see if we are admin or user
+echo $0 // to see the path
+history // to see history of cammand
+apt // ist of cammands package manager
+apt update // to update packages
+apt install (software name) // to install application in ubuntu 
+crt + l // to clear the screen of terminal 
+pwd // to see dritcotiry
+ls in pwd // to see folders
+touch (name) to create files
+mv (name) //to move files/folder and rename also 
+rm to // remove file 
+rm -r // to remove folders
+cat (name) //to see file
+more (name) // to see page by page file can't go up
+cat (file name) > (file name) // to copy from one to other
+cat (file name) (file name) > (file name) // to combine files to one
+
+
+}
+
+docker run -e "ACCEPT_EULA=1" -e "MSSQL_USER=SA" -e "SA_PASSWORD=SQLConnect1" -e "MSSQL_PID=Developer" -p 1433:1433 -d --name=sql_connect mcr.microsoft.com/azure-sql-edge
+
+// to connect with sql server
+
+
+docker container ls -a  // to see all list of docker containers
+
+docker stop sql_connect (the name which you have entered) // to stop the running container in docker
+
+
+
+docker run --detach --env MYSQL_ROOT_PASSWORD=Dummypassword --env MYSQL_USER=todo-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3308:3308 mysql:8-oracle
+
+
+
+mvn clean install
+
+
+docker run -dit openjdk:8-jdk-alpine
+
+docker container cp target\welcome-0.0.1-SNAPSHOT.jar xenodochial_mahavira:/tmp
+
+docker container commit xenodochial_mahavira amarnath79/welcome-rest-api:learning_doc
+ker
+
+docker container exec xenodochial_mahavira ls /tmp
+
+docker container commit --change='CMD ["java","-jar","/tmp/welcome-0.0.1-SNAPSHOT.jar"]' xenodochial_mahavira amarnath79/welcome-rest-api:learning_docker2
+
+
+
+FROM openjdk
+EXPOSE 8080
+ADD target/welcome-0.0.1-SNAPSHOT.jar welcome-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["sh", "-c", "java -jar /welcome-0.0.1-SNAPSHOT.jar"]
+
+
+
+<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.13</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<repository>amarnath79/${project.name}</repository>
+					<tag>${project.version}</tag>
+					<skipDockerInfo>true</skipDockerInfo>
+				</configuration>
+			</plugin>
+
+
+FROM openjdk
+EXPOSE 8080
+ADD target/*.jar app.jar
+ENTRYPOINT ["sh", "-c", "java -jar /app.jar"]
+
+
+
+

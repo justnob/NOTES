@@ -1,0 +1,19 @@
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection // to add automapper in project
+
+dotnet add package Microsoft.EntityFrameworkCore // To add ef migration options to the project
+
+dotnet add package Microsoft.EntityFrameworkCore.Design // To add the design dependency in the project
+
+dotnet add package Microsoft.EntityFrameworkCore.InMemory // To add the dependency of InMemory to the project
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer // To add the dependency fro sqlserver
+
+Modles // It is just a blueprint for the real database which application will be in the database and it also show the tables which will be created in the database. It is also called data layer in the application.
+
+Data // To communicate between the database and API
+
+Dtos // To make business layer which user will use
+
+Profiles // For automapper 
+
+ 

@@ -1,0 +1,22 @@
+Limits server 8080, 8081,......
+Spring Cloude Config Server 8888
+Currency Exchange Service 8000, 8001, 8002,....
+Currency Conversion Service 8100, 8101, 8102,.....
+Netflix Eureka Naming Server 8761
+Netflix Zuul API Gateway Server 8765
+Zipkin Distributed Tracing Service 9411 
+
+
+spring.config.import=optional:configserver:http://localhost:8888 to configure the server post.
+
+@ConfigurationProperties("limits-service") to get data from application.properties.
+
+spring.application.name=spring-cloud-config-server to name the file of application.properties.
+
+server.port=8888 to configure the port for application to run
+
+spring.cloud.config.server.git.uri=file:///D:/Microservices/Git/git-localconfig-repo file path for the git data file to read data
+
+@EnableConfigServer to enable the server 
+
+spring.application.name=limits-service directly assigning name to the application.properties of 

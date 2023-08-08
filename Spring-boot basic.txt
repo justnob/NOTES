@@ -1,0 +1,106 @@
+@RestController // to add controller to the api
+
+@RequestMapping // to map the api (GET,POST,PUT,DELETE)
+
+logging.level.org.springframework=debug // to see logs in detail (add this to the application.properties)
+
+spring.profiles.active=prod // to set profile for different things(dev, prod, qa, etc)
+
+type of logs (trace, debug, info, warning, error, off) // to see different level of log
+
+@configurationProperties(prefix = "") // to give a class configuration level access
+
+@Component // to automanage the code
+
+@Autowire // to autowire the classes
+
+server.port=8080 // to change the port
+
+@Controller // same as @RequestController but need to add @ResponseBody // to invoke
+
+@RequestParam String name // to take query from web url and store
+
+ModelMap to take the data url reaceaved to the jsp file.
+
+private Logger logger = LoggerFactory.getLogger(getClass()); // to log some thing in console
+
+@Service // for auto wiring
+
+@PathVariable // to search with url
+
+@SessionAttributes // to keep data for whole session
+
+<dependency>
+			<groupId>jakarta.servlet.jsp.jstl</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>glassfish-jstl</artifactId>
+		</dependency>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> //for table and more
+
+
+https://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/c/tld-summary.html // for tbale content
+
+
+
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+// for validation
+
+
+public interface TodoRepository extends JpaRepository<Todo, Integer> to create a session with database
+
+@RequestBody name where to and and what to add to post request
+
+SecureRandom secureRandom = new SecureRandom(); to generate secure random numbers like id
+
+@Component to interconnect the classes with each other to create a bean eg SuperContra game = new SuperContra()
+
+@Autowired to identify that a class depends upon a on it to eg GameRunner runner = new GameRunner(game)
+
+@Service to tell spring framework that it is contains business logic
+
+@RestController to tell the spring framework that it is a api controller
+
+@Repository o tell spring that it is related to the database and you also cann add @Transactional
+
+spring.datasource.url=jdbc:h2:mem:testdb
+
+EntityManager for managing the database and recomanded to use @PersistenceContext
+
+URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+				.buildAndExpand(body.getId()).toUri();
+
+
+@ResponseStatus(code = HttpStatus.NOT_FOUND)
+
+<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+to add swagger
+
+http://localhost:8080/swagger-ui/index.html
+
+
+<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+
+for xml response
+
+
+
+spring.jpa.defer-datasource-initialization=true for database h2
+
+@ControllerAdvice // to make the class and global exception handeling class
+
+@Exceptionhandeling // add it in the controller of perticular method to assign an custome error response

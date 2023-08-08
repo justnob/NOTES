@@ -1,0 +1,42 @@
+dotnet -h // to view all the commands we can use wih dot net.
+
+dotnet new list // to view what project tamplete you can create with dotnet.
+
+dotnet new sln // to create a new solution file 
+
+dotnet new webapi -n API(name you want to give) // webapi to create a webapi project, -n to give it a name and API is name
+
+dotnet sln add API // to add solution file to the API folder
+
+dotnet sln list to show the project which we have created
+
+dotnet dev-certs https // to see if https certificate is present or not
+
+dotnet dev-certs https --clean // to remove the current certificate
+
+dotnet dev-certs https --trust // to reinstall the certificate 
+
+dotnet tool list -g // to see which tools are installed globely in your system
+
+example of connection string "ConnectionStrings": {
+    "BookAdminPortalDb": "server=.;database=BookAdminPortalDb;Trusted_Connection=true;TrustServerCertificate=True;"
+  }
+
+dotnet ef // to see which ef version is installed
+
+dotnet ef migrations // to see al the commangs we can use with EF
+
+dotnet ef migrations add InitialCreate -o Data/Migrations // to create a migration in the data folder inside migration folder
+
+dotnet ef database update // to create a database
+
+dotnet new classlib -n Core // to create the new library file a classlib is a collection of classes
+
+dotnet add reference ../Infrastructure // creating a dependency between API anf Infrastructure
+
+dotnet restore // restore and reset the project
+
+dotnet build // to duild the project again
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // for automapper
+

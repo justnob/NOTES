@@ -1,0 +1,11 @@
+@RestController to add the function of @controller and many more
+
+@RequestMapping to map with undefined type of request like(get, post, delete, put)
+
+@PathVariable to add some extra path to the url like hello/{any thing}
+
+first a blueprint for the data like what king of data will be hold in the generate constructor, gererate getter and setter and a toString method
+
+after that gerenate a temprory service which will hold the data and the method to gat data anf in controler 
+
+just make a constructor and show the data

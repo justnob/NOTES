@@ -1,0 +1,49 @@
+git config user.name // to check the username of the git
+git config user.email // to check the email address of git
+
+// to configure the username and email to the git bash
+git config --global user.name "name"
+git config --global user.email "email"
+
+git init //to create a repository in your local machine
+git status //to get a report of the git repo status
+git clone <link> // to clone the repository form github to your local machine
+git add // to change code in repository
+git commit // to commit the changes
+git push // to push the changes in github repository
+git pull // to pull the changes from github repository
+git diff // to see the changes in the git repository
+git log // to see the log of repository
+git remote -v // to view the url for the github repository which you have cloned
+git remote add <name of repo> <link> // to add a github repository to your local repository
+or
+git remote add origin <link> // do the same thing but recomended
+git remote rename <old> <new> // to rename the github repository
+git remote remove <name> // to remove the connection between local repo and github
+git branch -M <new_name> // to rename the barnch
+git push -u origin main // to add local repo to github
+git fetch // to get all files in your local repository not the working directory
+or
+git fetch origin <branch>// to get perticular branch data
+git mearge // to mearce your local directory and local repository
+git switch <branch name>// to swithch between the branches
+git checkout origin/master // to see waht is happining in master branch(changes after fetch in local)
+git branch <barnch_name> // to create a branch form the existing new branch
+git branch -d <branch_name> // to delete the branch
+git log --oneline // to see short form og git log
+git restore <file_name> // to restore to recent version of commit
+git restore --source HEAD~N <file_name> // to go to specific commit n = number of commit you want to go back
+git restore --staged <file_name> // to unstage the file
+git reset hash number // changes the commit but does not change the file
+git reset hash number --hard // to change the commit and also the file
+git revert hash number // better than reset
+git stash // working changes which you have not commited but need to change branches
+git stash pop // to bring back changes
+git stash apply // to check what you were doing
+
+
+
+
+
+
+

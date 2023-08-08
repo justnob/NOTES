@@ -1,0 +1,43 @@
+ng new (name of project) // This will crate a new angular project
+
+ng serve // To run the application
+
+FormsModule // To import forms module eg- ngModule to take input from user
+
+npm install --save bootstrap@3 // To install the bootstrap version 3 in project
+
+ng generate component (name) // To generate a component of your desire
+
+$event // To take input and show in console 
+
+eg-{
+
+onUpdateServerName(event : any) {
+    this.serverName = event.target.value;
+  }
+
+}
+
+(click) // to trigar a click event
+
+in tsconfig.json under dom past 
+
+"typeRoots": [
+      "node_modules/@types",
+      "node_modules/@angular",
+      "node_modules/@angular/common/http"
+    ]
+
+(input) // to take input
+
+[(ngModel)] // from forms module and will do input and output
+
+
+<!-- Boxicons CSS -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<title>Hello, Boxicons!</title>
+
+
+
+
+
